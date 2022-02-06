@@ -52,12 +52,12 @@ class _BMI_calculator extends State<BMI_calculator> {
                    Row(
                      mainAxisAlignment: MainAxisAlignment.center,
                      children: [
-                       Text("180",
+                       Text("$height",
                          style: TextStyle(
                            fontSize: 20,
                            color: Colors.black,
                          ),),
-                       Text("cm",
+                       Text("m",
                          style: TextStyle(
                            fontSize: 10,
                            color: Colors.black,
@@ -77,11 +77,21 @@ class _BMI_calculator extends State<BMI_calculator> {
                            },
                            child: Icon(Icons.add),
                        ),
-                       Text(height.toString(),
-                       style: TextStyle(
-                         fontSize: 30,
-                         color: Colors.white,
-                       ),),
+                       Container(
+                         width: 90,
+                         child: TextField(
+                           decoration: InputDecoration(
+                             hintText: 'HEIGHT',
+                             border: OutlineInputBorder(),
+                           ),
+                           keyboardType: TextInputType.number,
+                           onChanged: (input){
+                             height=int.parse(input);
+                           },
+                         ),
+
+                       ),
+
 
                        FlatButton(
                          onPressed: (){
@@ -92,13 +102,6 @@ class _BMI_calculator extends State<BMI_calculator> {
                          },
                          child: Icon(Icons.remove),
                        ),
-                       // GestureDetector(
-                       //   onTap: (){
-                       //     setState(() {
-                       //       height--;
-                       //     });
-                       //   },
-                       //     child: Icon(Icons.remove, color: Colors.white, size: 25,)),
                      ],
                    ),
 
@@ -124,7 +127,7 @@ class _BMI_calculator extends State<BMI_calculator> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text("70",
+                        Text("$wight",
                           style: TextStyle(
                             fontSize: 20,
                             color: Colors.black,
@@ -151,11 +154,28 @@ class _BMI_calculator extends State<BMI_calculator> {
                           },
                           child: Icon(Icons.add),
                         ),
-                        Text(wight.toString(),
-                          style: TextStyle(
-                            fontSize: 30,
-                            color: Colors.white,
-                          ),),
+                        Container(
+                          width: 100,
+                          child: TextField(
+                            decoration: InputDecoration(
+                              hintText: 'WIGHT',
+                              border: OutlineInputBorder(),
+                            ),
+                            keyboardType: TextInputType.number,
+                            onChanged: (input){
+                              height=int.parse(input);
+                            },
+
+                          ),
+                        ),
+
+
+
+                        // Text(wight.toString(),
+                        //   style: TextStyle(
+                        //     fontSize: 30,
+                        //     color: Colors.white,
+                        //   ),),
 
                         FlatButton(
                           onPressed: (){
@@ -188,7 +208,19 @@ class _BMI_calculator extends State<BMI_calculator> {
                 child: Text('Calculate',
                 ) ,
               ),
+
             ),
+
+
+            // ConstrainedBox(
+            //   constraints: const BoxConstraints.tightFor(width: 100),
+            //   child: const TextField(
+            //     decoration: InputDecoration(
+            //       hintText: 'WIGHT',
+            //       border: OutlineInputBorder(),
+            //     ),
+            //   ),
+            // ),
 
 
 

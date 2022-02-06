@@ -11,7 +11,8 @@ class Calculate{
 
   String cal(){
     result=(wight/(height*height));
-    return result.toString();
+    //double result1 = double.parse((result).toStringAsFixed(2));
+    return result.toStringAsFixed(3);
   }
 
    feed(){
